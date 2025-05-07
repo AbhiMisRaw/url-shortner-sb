@@ -56,10 +56,10 @@ jobs:
          password: ${{ secrets.DOCKERHUB_PASS }}
 
      - name: Build Docker Image
-       run: docker build -t your-dockerhub-username/simply-links:latest .
+       run: docker build -t abhidevmishra/simply-links:latest .
 
      - name: Push Docker Image
-       run: docker push your-dockerhub-username/simply-links:latest
+       run: docker push abhidevmishra/simply-links:latest
 
      - name: Acknowledgement
        run: echo "Image is pushed to dockerhub."
