@@ -61,5 +61,8 @@ jobs:
      - name: Push Docker Image
        run: docker push your-dockerhub-username/simply-links:latest
 
+     - name: Acknowledgement
+       run: echo "Image is pushed to dockerhub."
+
 
 
