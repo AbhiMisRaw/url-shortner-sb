@@ -1,0 +1,29 @@
+name: Build and deploy Simply-links
+
+on:
+  push:
+
+  workflow_dispatch:
+
+jobs:
+  Test and build Jar file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Java Setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+
+      - name: Grant permission to execute file
+        run: chmod +x ./mvnw
+
+      - name: Run Tests
+        run: ./mvnw test
+
+      - name: Acknowledgement
+        run: echo "All task successfully completed."
